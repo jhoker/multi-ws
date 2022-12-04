@@ -1,4 +1,4 @@
-clear
+#!/bin/bash
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -26,6 +26,7 @@ dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
 if [[ "$hst" != "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
 fi
+
 mkdir -p /etc/xray
 
 echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
