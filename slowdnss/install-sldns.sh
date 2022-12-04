@@ -19,11 +19,11 @@ NC='\e[0m'
 echo "Installing SSH Slowdns" | lolcat
 echo "Progress..." | lolcat
 sleep 3
-wget https://zxvpn.my.id/website/sshonly/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
+wget https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
 nameserver=$(cat /root/nsdomain)
 
 # SSH SlowDNS
-wget -qO- -O /etc/ssh/sshd_config https://zxvpn.my.id/website/sshonly/slowdnss/sshd_config
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/sshd_config
 systemctl restart sshd
 
 apt install screen -y
@@ -35,18 +35,18 @@ service iptables reload
 
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://zxvpn.my.id/website/sshonly/slowdnss/server.key"
-wget -q -O /etc/slowdns/server.pub "https://zxvpn.my.id/website/sshonly/slowdnss/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://zxvpn.my.id/website/sshonly/slowdnss/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://zxvpn.my.id/website/sshonly/slowdnss/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 cd
-#wget -q -O /etc/systemd/system/client-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/server-sldns.service"
+#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/client-sldns.service"
+#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/jhoker/multi-ws/main/slowdnss/server-sldns.service"
 cd
 #install client-sldns.service
 cat > /etc/systemd/system/client-sldns.service << END
