@@ -1,10 +1,4 @@
-#fi
-#sleep 3
-#echo -e "
-#"
-date
-echo ""
-sleep 1
+#!/bin/bash
 echo -e "[ ${green}INFO${NC} ] Checking... "
 sleep 2
 sleep 1
