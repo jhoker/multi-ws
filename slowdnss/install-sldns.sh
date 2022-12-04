@@ -19,7 +19,7 @@ NC='\e[0m'
 echo "Installing SSH Slowdns" | lolcat
 echo "Progress..." | lolcat
 sleep 3
-#wget https://zxvpn.my.id/website/sshonly/slowdnss/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
+wget https://zxvpn.my.id/website/sshonly/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
 nameserver=$(cat /root/nsdomain)
 
 # SSH SlowDNS
@@ -45,8 +45,8 @@ chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 cd
-#wget -q -O /etc/systemd/system/client-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/slowdnss/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/slowdnss/server-sldns.service"
+#wget -q -O /etc/systemd/system/client-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/client-sldns.service"
+#wget -q -O /etc/systemd/system/server-sldns.service "https://zxvpn.my.id/website/sshonly/slowdnss/server-sldns.service"
 cd
 #install client-sldns.service
 cat > /etc/systemd/system/client-sldns.service << END
